@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mfsiat/Scraping_With_Puppeteer/issues"
   },
-  "homepage": "https://github.com/mfsiat/Scraping_With_Puppeteer#readme"
+  "homepage": "https://github.com/mfsiat/Scraping_With_Puppeteer#readme",
+  "dependencies": {
+    "puppeteer": "^19.2.2"
+  }
 }
