@@ -18,7 +18,16 @@ async function run() {
     // console.log(html)
 
     const title = await page.evaluate(() => document.title);
-    console.log(title);
+    // const innerText = await page.evaluate(() => document.body.innerText);
+    console.log(`The Title: `+title);
+    // console.log(`The innerTest: `+innerText);
+
+    // get the links from the page 
+    const links = await page.evaluate(() => 
+        Array.from(document.querySelectorAll('a'), (e) => e.href)
+    );
+
+    console.log(links);
 
     // close the browser
     await browser.close();
