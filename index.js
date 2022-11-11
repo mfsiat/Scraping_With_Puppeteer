@@ -1,3 +1,4 @@
+const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 async function run() {
@@ -35,6 +36,12 @@ async function run() {
         })));
 
     console.log(links);
+
+    // save data into json file 
+    fs.writeFile('data.json', JSON.stringify(links), (err) => {
+        if(err) throw err;
+        console.log('\nFile Saved');
+    })
 
     // close the browser
     await browser.close();
