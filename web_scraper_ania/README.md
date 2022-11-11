@@ -1,13 +1,7 @@
-const PORT = 8222
-const axios = require('axios')
-const cheerio = require('cheerio')
-const { response } = require('express')
-const express = require('express')
+## Scrap with cheerio 
 
-const app = express()
-
-const url = 'https://www.thedailystar.net/'
-
+- Codes 
+```javascript
 axios(url)
   .then(response => {
     const html = response.data
@@ -26,5 +20,4 @@ axios(url)
 
     console.log(articles)
   }).catch(err => console.log(err))
-
-app.listen(PORT, () => console.log(`server running on PORT ${PORT}`) )
+```
