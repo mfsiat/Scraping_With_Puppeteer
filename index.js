@@ -23,9 +23,16 @@ async function run() {
     // console.log(`The innerTest: `+innerText);
 
     // get the links from the page 
+    // const links = await page.evaluate(() => 
+    //     Array.from(document.querySelectorAll('a'), (e) => e.href)
+    // );
+
+    // get them out as array 
     const links = await page.evaluate(() => 
-        Array.from(document.querySelectorAll('a'), (e) => e.href)
-    );
+        Array.from(document.querySelectorAll('#container .F4BJV'), (e) => ({
+            url: e.href,
+            title: e.querySelector('F4BJV h6').innerText,
+        })));
 
     console.log(links);
 
