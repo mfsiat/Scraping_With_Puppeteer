@@ -29,9 +29,9 @@ async function run() {
 
     // get them out as array 
     const links = await page.evaluate(() => 
-        Array.from(document.querySelectorAll('#container .F4BJV'), (e) => ({
+        Array.from(document.querySelectorAll('a'), (e) => ({
             url: e.href,
-            title: e.querySelector('F4BJV h6').innerText,
+            // title: e.querySelector('F4BJV h6').innerText,
         })));
 
     console.log(links);
